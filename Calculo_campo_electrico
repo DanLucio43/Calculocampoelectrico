@@ -1,0 +1,18 @@
+#Maribel Mendez
+    
+import math as m
+k=8.987551*m.pow(10,9)
+
+q=int(input("Escribe la carga(nC): "))
+d=float(input("Distancia(m): "))
+
+v=float(input("Volts(V): "))
+print('A una distancia de: ',d,'m')
+q=q*m.pow(10,-9)
+#q=(-2)*m.pow(10,-9)
+
+E=(k*q)/(d*d)
+print('La energia del campo electrico es: ',E,'V/m')
+
+e2=v/d
+print('Usando la formula de v/d: ',e2,'V/m')
