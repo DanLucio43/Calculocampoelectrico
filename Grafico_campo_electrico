@@ -1,0 +1,31 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Sep  7 17:37:02 2021
+
+@author: Gonzalez Rocha Jesus Daniel
+"""
+import matplotlib.pyplot as plt
+import numpy as np
+
+distancias=np.zeros(15)
+volts=np.zeros(15)
+campo=np.zeros(15)
+for i in range(15):
+    distancias[i]=input(f"Captura la distancia {i+1}(cm): ")
+    distancias[i]=distancias[i]/100 #Pasamos a metros para poder calcular el campo electrico
+    volts[i]=input("Captura el voltaje en esa distancia (V): ")
+    campo[i]=volts[i]/distancias[i]#Calculamos el campo electrico
+
+for i in range(15):
+    print(f"Campo electrico {i}: {campo[i]}\n")
+plt.plot(distancias,campo, linestyle = 'dotted',color='tab:purple')
+plt.ylabel('Campo electrico [V/m]',fontdict={'color':'tab:blue'})
+plt.xlabel('Distancia [m]',fontdict={'color':'tab:blue'})
+plt.title('Grafica campo electrico contra distancia',loc='center',fontdict={'fontweight':'bold'})
+plt.show()
+
+plt.plot(distancias,volts, linestyle = 'dotted',color='tab:orange')
+plt.ylabel('Voltaje [V]',fontdict={'color':'tab:blue'})
+plt.xlabel('Distancia [m]',fontdict={'color':'tab:blue'})
+plt.title('Grafica voltaje contra distancia',loc='center',fontdict={'fontweight':'bold'})
+plt.show()
